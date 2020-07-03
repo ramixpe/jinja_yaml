@@ -1,0 +1,253 @@
+P1:
+    hostname: P1
+    interfaces:
+      loopback0:
+        ipaddr: 1.1.1.1
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 10.10.12.1
+        description: P2
+      GigabitEthernet0/0/0/1:
+        ipaddr: 10.10.13.1
+        description: P3
+      GigabitEthernet0/0/0/2:
+        ipaddr: 172.16.11.1
+        description: PE1
+      GigabitEthernet0/0/0/3:
+        ipaddr: 172.16.12.1
+        description: PE2
+      GigabitEthernet0/0/0/4:
+        ipaddr: 10.10.14.1
+        description: P4
+
+    mpls:
+        mpls_id : 1.1.1.1
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+    isis:
+        isis_id : '0001'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+P2:
+    hostname: P2
+    interfaces:
+      loopback0:
+        ipaddr: 2.2.2.2
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 10.10.12.2
+        description: P1
+      GigabitEthernet0/0/0/1:
+        ipaddr: 10.10.24.2
+        description: P4
+      GigabitEthernet0/0/0/2:
+        ipaddr: 172.16.23.2
+        description: PE3
+      GigabitEthernet0/0/0/3:
+        ipaddr: 172.16.24.2
+        description: PE4
+      GigabitEthernet0/0/0/4:
+        ipaddr: 10.10.23.2
+        description: P3
+    mpls:
+        mpls_id : 2.2.2.2
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+    isis:
+        isis_id : '0002'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+P3:
+    hostname: P3
+    interfaces:
+      loopback0:
+        ipaddr: 3.3.3.3
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 10.10.34.3
+        description: P4
+      GigabitEthernet0/0/0/1:
+        ipaddr: 10.10.13.3
+        description: P1
+      GigabitEthernet0/0/0/2:
+        ipaddr: 172.16.31.3
+        description: PE1
+      GigabitEthernet0/0/0/3:
+        ipaddr: 172.16.32.3
+        description: PE2
+      GigabitEthernet0/0/0/4:
+        ipaddr: 10.10.23.3
+        description: P2
+    mpls:
+        mpls_id : 3.3.3.3
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+    isis:
+        isis_id : '0003'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+P4:
+    hostname: P4
+    interfaces:
+      loopback0:
+        ipaddr: 4.4.4.4
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 10.10.34.4
+        description: P3
+      GigabitEthernet0/0/0/1:
+        ipaddr: 10.10.24.4
+        description: P2
+      GigabitEthernet0/0/0/2:
+        ipaddr: 172.16.44.4
+        description: PE4
+      GigabitEthernet0/0/0/3:
+        ipaddr: 172.16.43.4
+        description: PE3
+      GigabitEthernet0/0/0/4:
+        ipaddr: 10.10.14.4
+        description: P1
+    mpls:
+        mpls_id : 4.4.4.4
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+    isis:
+        isis_id : '0004'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+            - GigabitEthernet0/0/0/2
+            - GigabitEthernet0/0/0/3
+            - GigabitEthernet0/0/0/4
+PE1:
+    hostname: PE1
+    interfaces:
+      loopback0:
+        ipaddr: 11.11.11.11
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 172.16.11.11
+        description: P1
+      GigabitEthernet0/0/0/1:
+        ipaddr: 172.16.31.11
+        description: P3
+    mpls:
+        mpls_id : 11.11.11.11
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+    isis:
+        isis_id : '0011'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+PE2:
+    hostname: PE2
+    interfaces:
+      loopback0:
+        ipaddr: 12.12.12.12
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 172.16.32.12
+        description: P3
+      GigabitEthernet0/0/0/1:
+        ipaddr: 172.16.12.12
+        description: P1
+    mpls:
+        mpls_id : 12.12.12.12
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+    isis:
+        isis_id : '0012'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+PE3:
+    hostname: PE3
+    interfaces:
+      loopback0:
+        ipaddr: 13.13.13.13
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 172.16.23.13
+        description: P2
+      GigabitEthernet0/0/0/1:
+        ipaddr: 172.16.43.13
+        description: P4
+    mpls:
+        mpls_id : 13.13.13.13
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+    isis:
+        isis_id : '0013'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+PE4:
+    hostname: PE4
+    interfaces:
+      loopback0:
+        ipaddr: 14.14.14.14
+        description: loopback
+      GigabitEthernet0/0/0/0:
+        ipaddr: 172.16.44.14
+        description: P4
+      GigabitEthernet0/0/0/1:
+        ipaddr: 172.16.24.14
+        description: P2
+    mpls:
+        mpls_id : 14.14.14.14
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1
+    isis:
+        isis_id : '0014'
+        interfaces:
+            - loopback0
+            - GigabitEthernet0/0/0/0
+            - GigabitEthernet0/0/0/1

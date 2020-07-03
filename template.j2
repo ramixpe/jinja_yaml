@@ -1,0 +1,33 @@
+hostname {{hostname}}
+
+{%if interfaces%}
+{%for intf , int_config in interfaces.items()%}
+interface {{intf}}
+  ipv4 address {{int_config['ipaddr']}}
+  description  conncting to router {{int_config['description']}}
+  cdp
+  no shutdown
+!
+{%endfor%}
+{%endif%}
+
+{%if isis %}
+router isis LAB
+  net 49.0001.0000.{{ isis['isis_id']}}.00
+  address-family ipv4 unicast
+    metric-style wide
+{%for isis_int in isis.interfaces%}
+  interface {{isis_int}}
+    address-family ipv4 unicast
+{%endfor%}
+{%endif%}
+
+{%if mpls %}
+mpls ldp
+ router-id {{mpls['mpls_id']}}
+ address-family ipv4
+{%for mpls_int in mpls.interfaces%}
+  interface {{mpls_int}}
+    address-family ipv4
+{%endfor%}
+{%endif%}
